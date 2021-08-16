@@ -1,1 +1,28 @@
-GET http://localhost:3000
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "hello123",
+    "password": "phamhai123"
+}
+
+################################
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "hello123",
+    "password": "phamhai123"
+}
+
+########
+POST http://localhost:3000/api/course/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE4YzRjOTc1OTk4MDE5Y2M2NDdkMTUiLCJpYXQiOjE2MjkwMjA2NTZ9.NTwq7oForcXDVEEqj3HbAF7Lpi8ThpWT_rorWOr4ess
+
+{
+    "title": "Hoc JS",
+    "description": "Khoa hoc JS",
+    "state": "TO DO",
+    "url": "fb.com"
+}

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const courseSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -15,8 +16,8 @@ const courseSchema = new mongoose.Schema({
         enum: ['TO DO', 'DOING', 'DONE'],
     },
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users',
     },
     createdAt: {
         type: Date,
