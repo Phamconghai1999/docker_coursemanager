@@ -1,0 +1,47 @@
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "anibibi",
+    "password": "anibibi"
+}
+
+################################
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "anibibi",
+    "password": "anibibi"
+}
+
+######## post from aniibibi Create new course
+POST http://localhost:3000/api/course/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+
+{
+    "title": "Hoc PHP part 2",
+    "description": "Khoa hoc PHP2",
+    "url": "https://gg.com"
+}
+######## get list course from aniibibi
+GET http://localhost:3000/api/course/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+
+######## put from aniibibi
+PUT http://localhost:3000/api/course/6119cde5a7682b1e4c2677ca
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+
+{
+    "title": "Hoc JS",
+    "description": "Khoa hoc JS",
+    "url": "https://fb.com",
+    "state": "DOING"
+}
+######## put from aniibibi
+DELETE http://localhost:3000/api/course/6119cdd1a7682b1e4c2677c6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
