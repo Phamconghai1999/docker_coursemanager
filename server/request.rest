@@ -1,37 +1,37 @@
-POST http://localhost:3000/api/auth/register
+POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "anibibi",
-    "password": "anibibi"
+    "username": "Pham Quang Thien",
+    "password": "123456"
 }
 
 ################################
-POST http://localhost:3000/api/auth/login
+POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "anibibi",
-    "password": "anibibi"
+    "username": "Pham Quang Thien",
+    "password": "123456"
 }
 
 ######## post from aniibibi Create new course
-POST http://localhost:3000/api/course/create
+POST http://localhost:5000/api/course/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
 
 {
-    "title": "Hoc PHP part 2",
+    "title": "Hoc PHP fullstack",
     "description": "Khoa hoc PHP2",
     "url": "https://gg.com"
 }
 ######## get list course from aniibibi
-GET http://localhost:3000/api/course/
+GET http://localhost:5000/api/course/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
 
 ######## put from aniibibi
-PUT http://localhost:3000/api/course/6119cde5a7682b1e4c2677ca
+PUT http://localhost:5000/api/course/6119cde5a7682b1e4c2677ca
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
 
@@ -42,6 +42,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5Y
     "state": "DOING"
 }
 ######## put from aniibibi
-DELETE http://localhost:3000/api/course/6119cdd1a7682b1e4c2677c6
+DELETE http://localhost:5000/api/course/6119cdd1a7682b1e4c2677c6
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
