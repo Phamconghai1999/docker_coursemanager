@@ -1,12 +1,11 @@
 const express = require("express");
 const demoCourses = require("../models/DemoCourse");
 const router = express.Router();
-const verifyPublic = require("../middlewares/verifyPublic");
 
 // @route GET api/public/democourses
 // @desc get courses
 // @access Public
-router.get("/democourses", verifyPublic, async (req, res) => {
+router.get("/democourses", async (req, res) => {
   try {
     const courses = await demoCourses.find();
     res.json({ success: true, courses: courses });
@@ -15,13 +14,13 @@ router.get("/democourses", verifyPublic, async (req, res) => {
     res.status(500).json({ success: false, message: "SERVER ERROR" });
   }
 });
-// @route GET api/public/democourses//:limit
+// @route GET api/public/democourses/:limit
 // @desc get courses
 // @access Public
-router.get("/democourses/:limit", verifyPublic, async (req, res) => {
+router.get("/democourses/:count", async (req, res) => {
   try {
-    let limit = req.params.limit;
-    const courses = await demoCourses.find().limit(limit);
+    let count = parseInt(req.params.count);
+    const courses = await demoCourses.find().limit(count);
     res.json({ success: true, courses: courses });
   } catch (error) {
     console.log(error);
