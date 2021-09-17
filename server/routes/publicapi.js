@@ -28,3 +28,5 @@ router.get("/democourses/:limit", verifyPublic, async (req, res) => {
     res.status(500).json({ success: false, message: "SERVER ERROR" });
   }
 });
+
+module.exports = router;
