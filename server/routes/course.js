@@ -8,10 +8,10 @@ const verifyToken = require("../middlewares/verifyToken");
 // @access Private
 router.post("/create", verifyToken, async (req, res) => {
   let { title, description, url, state } = req.body;
-
+  console.log({ title, description, url, state });
   if (!title) {
     return res
-      .status(400)
+      .status(200)
       .json({ success: false, message: "Title must be specified" });
   }
 
@@ -111,7 +111,7 @@ router.delete("/:id", verifyToken, async (req, res) => {
     });
     // UserID not auth:
     if (!deletedCourse) {
-      return res.status(401).json({
+      return res.status(200).json({
         success: false,
         message: "Course not found or not authenticated user",
       });

@@ -1,4 +1,5 @@
-POST http://localhost:5000/api/auth/register
+######## Register
+POST https://coursani.herokuapp.com/api/auth/register
 Content-Type: application/json
 
 {
@@ -6,8 +7,8 @@ Content-Type: application/json
     "password": "123456"
 }
 
-################################
-POST http://localhost:5000/api/auth/login
+################################ Login
+POST https://coursani.herokuapp.com/api/auth/login
 Content-Type: application/json
 
 {
@@ -15,22 +16,22 @@ Content-Type: application/json
     "password": "123456"
 }
 
-######## post from aniibibi Create new course
-POST http://localhost:5000/api/course/create
+######## post Create new course
+POST https://coursani.herokuapp.com/api/course/create
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
 
 {
-    "title": "Hoc PHP fullstack",
-    "description": "Khoa hoc PHP2",
-    "url": "https://gg.com"
+    "title": "Hoc VueX ",
+    "description": "Khoa hoc VueX",
+    "url": "https://vi.vuejs.org/"
 }
-######## get list course from aniibibi
-GET http://localhost:5000/api/course/
+######## get list course 
+GET https://coursani.herokuapp.com/api/course/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTFiODU5MWQwOGJhNzM2MzQ0ZjhmNTciLCJpYXQiOjE2MjkxOTM2NzV9.JhpfrtgBzswH6KlfhaKdSaG5YR3iglCJS7EcWxb9WKk
 
-######## put from aniibibi
+######## put 
 PUT http://localhost:5000/api/course/6119cde5a7682b1e4c2677ca
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
@@ -41,7 +42,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5Y
     "url": "https://fb.com",
     "state": "DOING"
 }
-######## put from aniibibi
+######## put 
 DELETE http://localhost:5000/api/course/6119cdd1a7682b1e4c2677c6
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE5YmQ3NWJhYWY4ZDJmYWNhYWQwYjciLCJpYXQiOjE2MjkwNzY4ODl9.yXsC34bcL0t0RCNpxFnCctnA83t1xOSmYJfcyuV6_wk
+
+######## get public courses 
+GET https://coursani.herokuapp.com/api/public/democourses
+Content-Type: application/json

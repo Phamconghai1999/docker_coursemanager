@@ -14,7 +14,7 @@ router.post("/register", async (req, res) => {
   //simple validation
   if (!username || !password) {
     return res
-      .status(400)
+      .status(200)
       .json({ success: false, message: "Missing username / password" });
   }
   try {
@@ -22,14 +22,14 @@ router.post("/register", async (req, res) => {
     const user = await User.findOne({ username });
     if (user)
       return res
-        .status(400)
+        .status(200)
         .json({ success: false, message: "Username invailid !!" });
     //All good
     hashedPassword = await argon2.hash(password);
     const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
     // user token return
-    const acessToken = jwt.sign(
+    const accessToken = jwt.sign(
       { userId: newUser._id },
       process.env.ACCESS_TOKEN_SECRET
     );
@@ -37,7 +37,7 @@ router.post("/register", async (req, res) => {
       success: true,
       message: "Created successfully!",
       username,
-      acessToken,
+      accessToken,
     });
   } catch (error) {
     console.log(error);
@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {
     return res
-      .status(400)
+      .status(200)
       .json({ success: false, message: "Missing username / password" });
   }
   try {
@@ -60,19 +60,19 @@ router.post("/login", async (req, res) => {
     const userData = await User.findOne({ username });
     if (!userData) {
       return res
-        .status(400)
+        .status(200)
         .json({ success: false, message: "Incorect username / password" });
     }
     //username
     const passwordValid = await argon2.verify(userData.password, password);
     if (!passwordValid) {
       return res
-        .status(400)
+        .status(200)
         .json({ success: false, message: "Incorect username/ password" });
     }
     //All good
     // user token return
-    const acessToken = jwt.sign(
+    const accessToken = jwt.sign(
       { userId: userData._id },
       process.env.ACCESS_TOKEN_SECRET
     );
@@ -80,7 +80,7 @@ router.post("/login", async (req, res) => {
       success: true,
       message: "Login successfully!",
       username,
-      acessToken,
+      accessToken,
     });
   } catch (error) {
     console.log(error);
